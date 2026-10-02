@@ -1,0 +1,22 @@
+[package]
+name = "graceful_shutdown"
+version = "0.1.0"
+edition = "2021"
+authors = ["Oxidized Cloud <team@oxidizedcloud.com>"]
+description = "Production-grade graceful shutdown pattern for Axum & Tokio on Kubernetes"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tokio = { version = "1.40", features = ["full"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+axum = { version = "0.7" }
+tower = { version = "0.4" }
+tower-http = { version = "0.5", features = ["trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1.40", features = ["full", "test-util"] }
